@@ -29,16 +29,42 @@ public class WaypointMover : MonoBehaviour
         transform.LookAt(currentWaypoint);
     }
 
+    // // Update is called once per frame
+    // void Update()
+    // {
+    //     // Move from first waypoint to second
+    //     transform.position = Vector3.MoveTowards(transform.position, currentWaypoint.position, moveSpeed * Time.deltaTime);
+
+    //     // Moving towards the rest of the wavepoints
+    //     if(Vector3.Distance(transform.position, currentWaypoint.position) < distanceThreshold){
+    //         currentWaypoint = waypoints.GetNextWaypoint(currentWaypoint);
+    //         transform.LookAt(currentWaypoint);
+    //     }
+    // }
+
     // Update is called once per frame
     void Update()
     {
+        //Doing coroutines such that if we press button P, our waypoint movement works
+        if(Input.GetKey(KeyCode.P)){
+            StartCoroutine(nextMovement());
+        }else{
+            StopCoroutine(nextMovement());
+        }
+        
+    }
+
+    IEnumerator nextMovement(){
         // Move from first waypoint to second
         transform.position = Vector3.MoveTowards(transform.position, currentWaypoint.position, moveSpeed * Time.deltaTime);
 
-        // Moving towards the rest of the wavepoints
+    
+        //Moving towards the rest of the wavepoints
         if(Vector3.Distance(transform.position, currentWaypoint.position) < distanceThreshold){
             currentWaypoint = waypoints.GetNextWaypoint(currentWaypoint);
             transform.LookAt(currentWaypoint);
         }
+
+        yield return new WaitForSeconds(.1f);
     }
 }

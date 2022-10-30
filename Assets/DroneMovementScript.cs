@@ -18,7 +18,19 @@ public class DroneMovementScript : MonoBehaviour
 
     }
 
+
+
+    // Doing coroutines such that if we press button P, our normal flying drone stops
     void FixedUpdate(){
+        if(Input.GetKey(KeyCode.P)){
+            StopCoroutine(flyingDrone());
+        }else{
+            StartCoroutine(flyingDrone());
+        }
+    }
+
+
+    IEnumerator flyingDrone(){
         MovementUpDown();
         
         MovementForward();
@@ -35,7 +47,11 @@ public class DroneMovementScript : MonoBehaviour
         ourDrone.rotation = Quaternion.Euler(
             new Vector3(tiltAmountForward, currentYRotation, tiltAmountSideways)
         );
+
+        yield return new WaitForSeconds(.1f);
     }
+
+
 
     // Going up and down
     public float upForce;
