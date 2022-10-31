@@ -32,6 +32,9 @@ Fly down:     Shift
 First-Person: 3
 Third-Person: 1
 Top-down:     2
+Take picture w/ top-down camera:    G
+Head to waypoint: P
+
 
 *If the camera does not change perspectives, follow these steps:
 1) Open the project in unity and click on "Edit" in the top left corner
