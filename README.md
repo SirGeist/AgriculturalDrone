@@ -23,17 +23,18 @@ In the assets folder, click on the LowPolyFarmLite/Scenes/LowPolyFarmLite_Demo.u
 Once the scene is opened, just press play and you can then fly the drone.
 
 Drone Controls:
-Forward:      W	 
-Backward:     S
-Left:         A
-Right:        D
-Fly up:       Spacebar
-Fly down:     Shift
-First-Person: 3
-Third-Person: 1
-Top-down:     2
-Take picture w/ top-down camera:    G
-Head to waypoint: P
+-  Forward:          W	 
+-  Backward:         S
+-  Left:             A
+-  Right:            D
+-  Fly up:           Spacebar
+-  Fly down:         Shift
+-  First-Person:     3
+-  Third-Person:     1
+-  Top-down:         2
+-  Take picture:     G
+   - uses top-down camera  
+-  Head to waypoint: P
 
 
 *If the camera does not change perspectives, follow these steps:
