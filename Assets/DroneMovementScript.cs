@@ -24,6 +24,7 @@ public class DroneMovementScript : MonoBehaviour
     void FixedUpdate(){
         if(Input.GetKey(KeyCode.P)){
             StopCoroutine(flyingDrone());
+            ourDrone.AddRelativeForce(Vector3.up * 90);
         }else{
             StartCoroutine(flyingDrone());
         }

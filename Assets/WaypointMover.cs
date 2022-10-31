@@ -7,9 +7,9 @@ public class WaypointMover : MonoBehaviour
     // Stores a reference to the waypoint system this object will use
     [SerializeField] private Waypoint waypoints;
 
-    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed = 7f;
 
-    [SerializeField] private float distanceThreshold = 0.1f;
+    [SerializeField] private float distanceThreshold = 3f;
 
     // The current waypoint target that the object is moving towards
     private Transform currentWaypoint;
